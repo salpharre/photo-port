@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import About from "../index";
+import About from "..";
 //global function from Jest
 afterEach(cleanup);
 //declares component we're testing
