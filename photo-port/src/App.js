@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import About from "./components/About";
 import Nav from "./components/Nav";
 import Gallery from "./components/Gallery";
+import ContactForm from "./components/Contact";
 
 function App() {
   //navbar categories, other then about me and contact
@@ -31,6 +32,7 @@ function App() {
         currentCategory={currentCategory}
       />
       <main>
+        <ContactForm />
         <Gallery 
           currentCategory={currentCategory}
         />
