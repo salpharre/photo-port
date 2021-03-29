@@ -21,3 +21,8 @@ describe('PhotoList is rendering', () => {
     expect(asFragment()).toMatchSnapshot()
   });
 });
+
+//check images are rendering/visilbe
+// describe('images are visible', () => {
+//     it('')
+// });
