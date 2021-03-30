@@ -23,7 +23,8 @@ function App() {
 
   //state for keeping track of what object in categories array is selected
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
-
+  //to track whether contact has been selected
+  //if contact is selected and therefore state is set to true then contact will render, but not about me and gallery
   const [contactSelected, setContactSelected] = useState(false);
 
   return (
