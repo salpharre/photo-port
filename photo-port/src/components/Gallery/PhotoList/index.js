@@ -101,16 +101,31 @@ function PhotoList({categoryName}) {
         },
       ]);
 
+    //state to track current photo
+    const [currentPhoto, setCurrentPhoto] = useState();
+    //tracks whether modal is open
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    //function to toggle modal
+    const toggleModal = (image, i) => {
+      setCurrentPhoto({...image, index: i});
+      setIsModalOpen(true);
+    }
+    //filters photos so only photos that match selected category are visible
     const currentPhotos = photos.filter((photo) => photo.category === categoryName);
 
     return(
         <div className="flex-row">
-          <Modal />
+          {isModalOpen &&
+          <Modal 
+            currentPhoto={currentPhoto}
+          />}
             {currentPhotos.map((image, i) => (
             <img 
                 src={require(`../../../assets/small/${categoryName}/${i}.jpg`).default}
                 alt={image.name}
                 className="img-thumbnail mx-1"
+                onClick={() => toggleModal(image, i)}
                 key={image.name}
             />
             ))}
