@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import photo from "../../../assets/small/commercial/0.jpg";
+import Modal from "./Modal";
 
 function PhotoList({categoryName}) {
     const [photos] = useState([
@@ -104,6 +105,7 @@ function PhotoList({categoryName}) {
 
     return(
         <div className="flex-row">
+          <Modal />
             {currentPhotos.map((image, i) => (
             <img 
                 src={require(`../../../assets/small/${categoryName}/${i}.jpg`).default}
