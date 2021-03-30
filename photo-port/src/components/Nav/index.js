@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
 
-function Nav({ categories, setCurrentCategory, currentCategory }) {
+function Nav({ categories, setCurrentCategory, currentCategory, contactSelected, setContactSelected }) {
     //or instead of destructuring inside the function Nav as arguments
     //set it as props
     //with below:
@@ -26,10 +26,10 @@ function Nav({ categories, setCurrentCategory, currentCategory }) {
             <nav>
                 <ul className="flex-row">
                     <li className="mx-2">
-                        <a data-testid="about" href="#about">About me</a>
+                        <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>About me</a>
                     </li>
                     <li>
-                        <span>Contact</span>
+                        <span onClick={() => setContactSelected(true)}>Contact</span>
                     </li>
                     {categories.map((category) => (
                         <li
@@ -38,7 +38,10 @@ function Nav({ categories, setCurrentCategory, currentCategory }) {
                             key={category.name}
                         >
                             <span 
-                                onClick={() => setCurrentCategory(category)}
+                                onClick={() => {
+                                    setCurrentCategory(category);
+                                    setContactSelected(false);
+                                }}
                             >
                                 {capitalizeFirstLetter(category.name)}
                             </span>
