@@ -1,7 +1,7 @@
-import React from 'react'
-import { render, cleanup } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
-import PhotoList from '../'
+import React from 'react';
+import { render, cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import PhotoList from '..';
 
 const portraits = "portraits";
 
@@ -14,7 +14,7 @@ describe('PhotoList is rendering', () => {
     />);
   });
 
-  it('renders', () => {
+  it('matches snapshot', () => {
     const { asFragment } = render(<PhotoList 
         categoryName={portraits}
     />)

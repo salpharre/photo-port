@@ -108,7 +108,7 @@ function PhotoList({categoryName}) {
 
     //function to toggle modal
     //takes in the object from the filtered photos array and the position (index => i) in the array
-    //saved in state as an object that includes all the object key values pairs from the image plus the index(which will be used to grab the image from the assets folder)
+    //saved in state as an object that includes all the object key values pairs from the image + the index(which will be used to grab the image from the assets folder)
     //!isModalOpen will cause the boolean for isModalOpen state to flip to true when clicked on
     //and back to false when button to close is clicked
     const toggleModal = (image, i) => {
