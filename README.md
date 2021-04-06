@@ -26,3 +26,5 @@ Link to [launched website](https://salpharre.github.io/photo-port/)
 * Sandra Arredondo
 
 ### License
+
+It is [unlicensed](https://github.com/salpharre/photo-port/blob/main/LICENSE), curtesy of [https://unlicense.org/](https://unlicense.org/).
