@@ -32,8 +32,16 @@ describe('Modal is rendering', () => {
     });
 });
 //testing click event fires
-// describe('Click Event', () => {
-//     it('calls onClose handler', () => {
-      
-//     });
-//   })  
+describe('Click Event', () => {
+    it('calls onClose handler', () => {
+        //arrange: render modal
+        const { getByText } = render(<Modal
+            onClose={mockToggleModal}
+            currentPhoto={currentPhoto}
+        />);
+        //act: simulate click event
+        fireEvent.click(getByText('Close this modal'));
+        //assert: expected matcher
+        expect(mockToggleModal).toHaveBeenCalledTimes(1);
+    });
+})
